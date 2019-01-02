@@ -1,2 +1,2 @@
 # particle-simulator
-An undergraduate project in designing particle simulation in C++
+An undergraduate project in orbital simulation in C++
