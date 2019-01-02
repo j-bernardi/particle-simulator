@@ -1,0 +1,51 @@
+Task set to self:
+The main task I wanted to achieve with this program was to create an accurate, physical and visual output based on many inputs.
+At first this took the form of a while-loop where the program asked the user for all of the input details, but this was slow and clunky.
+The final solution had an option to pass the problem set-up as arguments, in the form of:
+PlanetSim dimension centralMass timeStep nOfOrbitingBodies readInputsFile cycles
+
+I also wanted to spend more time learning how to use gnuplot, particularly animation.
+I am including a .gnu file that successfully produced gifs of planetary orbits in two and
+three dimensions, to allow the visualisation of the solutions to the problems input.
+
+The input file inputs must take a specfic form of:
+name mass x1 x2 (x3) v1 v2 (v3). 
+
+The idea behind this was to be able to pass many, many bodies to the program,
+Ie potentially as outputs from another program, or just a user-created file of course. 
+
+I also wanted to make use of object oriented programming in c++, to make modular 
+vector operators and forces (ie that could be reused in the next session).
+
+The leapfrog method was employed inorder to adjust the positions with velocities and taking
+into account changes in velocity due to force between the body and the central mass during each time step.
+
+Aspects in learning intended to have been helped:
+The program produced can take any input conditions and produces an accurate output
+(as long as the orbiting masses are small relative to the central masses and each other,
+ie I did not have enough time to consider n-body interactons- all interactions
+were modelled to be between the body acted on by the central mass and not vice versa).
+The idea behind this is to be able to visualise any orbit problems that I may face in the future,
+eg if any initial condition is known the orbit can be traced out to check any analytic solutions, 
+or even potential orbits that are not (easily) analytic.
+
+Technical/Computational challenges:
+-How to use command line arguments in c++ and adjust the program's operation based on what arguments are passed.
+-How to read in files passed to a program and store their input in a data structure.
+-using global variables
+-using the 'vector' type to appropriately store and operate on velocities and positions. 
+-learning how to use header files and instantiate objects with object oriented programming in c++.
+-learning how to use gnuplot to animate outputs.
+
+Use of program helped me to learn:
+As well as visualisation of orbits already studied in detail, the program allowed visualisation
+of non-elliptical/non-bound interactions of particles, planets etc moving through gravitational
+fields of a mass at the origin of a co-ordinate system.
+Some orbits precessed around the origin, eg an ellipse that slowly rotates (slow compared to 
+the actual orbit of the planet).
+
+OPERATION:
+PlanetSim would be called as spoken about above, then the output should be put into an output file.
+From here, you can grep all the outputs by name (eg grep Earth output) into an earth-specific file
+and use this specific file to plot the data in gnuplot. Use a numbered system to be able to loop the 
+plotting process.

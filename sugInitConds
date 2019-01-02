@@ -1,0 +1,18 @@
+For planets:
+1)
+PlanetSim 2 5e10 0.1 2 'planetsIn.txt' 5000 >> EV
+
+grep EV Earth >> Eout, Venus >> Vout
+
+for lots of planets (ie particles)
+
+2)
+PlanetSim 2 5e10 1 11 'particlesIn.txt' 5000 >> partsout
+
+grep files to p1, p2, etc... then load 'AnimateParts.gnu'
+
+
+3)
+PlanetSim 3 5e10 1 1 'in3d.txt' 1500 >> 3dOut
+
+grep into E3out, use the 3d .gnu file to animate a splot.
